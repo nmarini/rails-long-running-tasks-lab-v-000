@@ -5,7 +5,9 @@ class SongsController < ApplicationController
   end
 
   def upload
-
+    CVS.foreach(params[:file].path, headers: true) do |thing|
+      binding.pry
+    end
   end
 
   def show
